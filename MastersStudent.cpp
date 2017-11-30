@@ -10,16 +10,23 @@ MastersStudent::MastersStudent(std::string fn, std::string ln,
 
 // New methods specific to MastersStudent
 float MastersStudent::getMsGpa() {
-  // TODO Implement this 
-  return 0.0;
+  float msgpa = 0;
+  for(int i = 0; i < _ms_grades.size(); i++){
+	  msgpa = msgpa + _ms_grades[i];
+  }
+  if (msgpa != 0) {
+	  msgpa = msgpa/_ms_grades.size();
+  }
+  return msgpa;
 }
 
 void MastersStudent::addMsGrade(float grade) {
-  // TODO Implement this 
+  _ms_grades.push_back(grade);
 }
 
 // Override Student's printInfo to include new fields
 void MastersStudent::printInfo() {
   Student::printInfo();
-  // TODO Print additional MastersStudent fields
+  printf("MS %s: %d\n", _major.c_str(), _ms_grad_year);
+  printf("MS GPA: %.2f\n", getMsGpa());
 }
