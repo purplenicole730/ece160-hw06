@@ -22,9 +22,7 @@ void Student::addGrade(float grade) {
 }
 
 const std::string& Student::getLastName() {
-  std::string ln;
-  ln = Student[1];
-  return ln;
+  return _last_name;
 }
 
 void Student::printInfo() {
@@ -53,6 +51,6 @@ void Student::printInfo() {
           break;
   }
   printf("%s, %s\n", _last_name.c_str(), _first_name.c_str());
-  printf("%s, %d\n", major.c_str(), _grad_year);
+  printf("%s %d\n", major.c_str(), _grad_year);
   printf("GPA: %.2f\n", getGpa());
 }
